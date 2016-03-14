@@ -53,29 +53,29 @@
     - FixedUpdate は物理の更新の際に呼ばれる
     - なので、今回はFixedUpdateに書く
 
-        ```
+```
 void FixedUpdate()
 {
     Input
 }
-        ```
+```
 
    - Googleで 「Unity Input」で検索
   - Inputページの下の方の GetAxis をクリック
   - 引数の意味、書いてある内容、サンプルコード
   - Scriptに戻って
 
-    ```
+```
 void FixedUpdate()
 {
     float moveH = Input.GetAxis(“Horizontal”);
      float moveV = Input.GetAxis(“Vertical”);
 }
-    ```
+```
 
   - 上の説明
 
-    ```
+```
 void FixedUpdate()
 {
     float moveH = Input.GetAxis(“Horizontal”);
@@ -101,7 +101,7 @@ void FixedUpdate()
     - 今回はドキュメントに書いてある通りにやってみよう
     - ドキュメントに書いてあるサンプルコードを説明
 
-        ```
+```
     private Rigidbody rb;
     
     void Start()
