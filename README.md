@@ -53,30 +53,35 @@
     - FixedUpdate は物理の更新の際に呼ばれる
     - なので、今回はFixedUpdateに書く
 
+```
     void FixedUpdate()
     {
         Input
     }
-
+```
    - Googleで 「Unity Input」で検索
   - Inputページの下の方の GetAxis をクリック
   - 引数の意味、書いてある内容、サンプルコード
   - Scriptに戻って
 
+```
     void FixedUpdate()
     {
         float moveH = Input.GetAxis(“Horizontal”);
         float moveV = Input.GetAxis(“Vertical”);
     }
+```
 
   - 上の説明
 
+```
     void FixedUpdate()
     {
         float moveH = Input.GetAxis(“Horizontal”);
         float moveV = Input.GetAxis(“Vertical”);
         Rigidbody
     }
+```
 
   - 上の検索欄でRigidbodyを検索
   - AddForce へ
@@ -95,6 +100,7 @@
     - 今回はドキュメントに書いてある通りにやってみよう
     - ドキュメントに書いてあるサンプルコードを説明
 
+```
     private Rigidbody rb;
     
     void Start()
@@ -111,6 +117,7 @@
     
         rb.AddForce(move);
     }
+```
 
  - では動かしてみましょう。
   - 上部の▲ボタンでプレイモード
@@ -149,6 +156,7 @@
  - Main Camera を選択、Add Component → C# Script “CameraController"
   - 場所をルートから変更
 
+```
     public GameObject player;
     private Vector3 offset;
 
@@ -161,6 +169,7 @@
     {
         transform.position = player.transform.position + offset;
     }
+```
 
  - 説明
   - Update は本当はいけない。毎回描画フレームに行われるので、Cameraが先か、Playerが先かで挙動が変わる
@@ -195,10 +204,12 @@
  - Script 変更
   - transform　で検索
 
+```
     void Update()
     {
          transform.Rotate( new Vector3 (15, 30, 45) * Time.deltaTime);
     }
+```
 
   - プレイモードで動く？
  - Prefab化
@@ -227,21 +238,25 @@
  - PlayerController を開く
   - 最後にペースト
 
+```
     void OnTriggerEnter(Collider other) {
         Destroy(other.gameObject);
     }
+```
 
  - 説明
   - OnTriggerEnter は接触した時呼ばれる、other は相手側
  - 非Active化で良いので、Destroy の部分を一旦削除
  - GameObjectで検索　→　CompareTag SetActiveを選択
 
+```
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag(“Item”) )
         {
              other.gameObject.SetActive(false);
         }
     }
+```
 
   - Unityに戻ってエラーがないことを確認
  - Item の上のTag →Add Tag… 選択　→　Itemを追加
@@ -283,16 +298,26 @@
     - 左上の角すぎるので、PosX 10 Pos Y -10 にして、ちょっと間を空ける
  - PlayerController に戻る
   - using UnityEngine.UI を追加
+
           public Text countText;
+
   - Startに
+
           countText.text = “Count: “ + count.ToString();
+
   - OnTriggerEnter のIf文に
+
           countText.text = “Count: “ + count.ToString();
+
   - うーん、同じ文書くのはいただけないね。
+
+```
           void SetCountText()
           {
                countText.text = “Count: “ + count.ToString();
           }
+```
+
   - SetCountText()に変更
  - Unityに戻る
   - Player Controller の Count TextにCountText をD&D
