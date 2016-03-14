@@ -69,7 +69,7 @@ void FixedUpdate()
 void FixedUpdate()
 {
     float moveH = Input.GetAxis(“Horizontal”);
-     float moveV = Input.GetAxis(“Vertical”);
+    float moveV = Input.GetAxis(“Vertical”);
 }
 ```
 
