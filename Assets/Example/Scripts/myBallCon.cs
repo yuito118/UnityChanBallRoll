@@ -23,7 +23,7 @@ public class myBallCon : MonoBehaviour {
 
 	public float friction = 0.01f;
 
-	void FixedUpdate()
+	void Update()
 	{
 		float moveHorizontal = Input.GetAxis("Horizontal");
 		float moveVertical = Input.GetAxis("Vertical");
@@ -32,9 +32,9 @@ public class myBallCon : MonoBehaviour {
 		Vector3 vel = rb.velocity;
 		if ( vel.magnitude > 0.01f ) {
 			vel.Normalize();
-			rb.AddForce(vel * -1.0f * friction);
+            rb.AddForce(vel * -1.0f * friction * Time.deltaTime);
 		}
-		rb.AddForce(movement * speed);
+        rb.AddForce(movement * speed * Time.deltaTime);
 	}
 
 	void OnTriggerEnter(Collider other)
