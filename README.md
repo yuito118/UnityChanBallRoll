@@ -7,14 +7,15 @@
 - 本講座で制作するミニゲーム「ユニティちゃんボールロール」の各種部品があらかじめ用意されているほか、完成版シーンも収録されており、実際にゲームで遊んだり、完成版のプログラムの内容を確認することができます。
 
 - 本講座の概要は以下の動画をご覧ください。
- - [![Lecture 00](https://img.youtube.com/vi/97-_OnbwF5M/0.jpg)](https://www.youtube.com/watch?v=97-_OnbwF5M)
 
- - 「ユニティちゃんボールロール」は「unityroom」でもプレイすることができます。
+  [![Lecture 00](https://img.youtube.com/vi/97-_OnbwF5M/0.jpg)](https://www.youtube.com/watch?v=97-_OnbwF5M)
+
+- 「ユニティちゃんボールロール」は「unityroom」でもプレイすることができます。
   - https://unityroom.com/games/unity-chan-ball-roll
 
 --------------------------------------------------------------------------
 ## 「ユニティちゃんが教える！初心者向けUnity講座」カリキュラム
- - はじめに
+- はじめに
   - Lecture 01 Unityとは
   - Lecture 02 Unityインストール
   - Lecture 03 Unityエディタの使い方
