@@ -1,9 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class Rotator_Complete : MonoBehaviour {
-
-    // Use this for initialization
+public class Rotator_Complete : MonoBehaviour
+{
+    // Start is called before the first frame update
     void Start()
     {
 

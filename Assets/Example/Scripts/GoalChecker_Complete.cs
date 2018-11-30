@@ -1,38 +1,45 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
 
-public class GoalChecker_Complete : MonoBehaviour {
 
-	public GameObject retryButton;
+public class GoalChecker_Complete : MonoBehaviour
+{
     public GameObject unityChan;
-    
-    public AudioSource goalJingle;
-    public AudioSource bgm;
+    public AudioSource gameBgm;
+    public AudioSource goalBgm;
 
+    public GameObject retryButton;
 
-	void Start()
-	{
-		retryButton.SetActive(false);
-	}
+    // Start is called before the first frame update
+    void Start()
+    {
+        retryButton.SetActive(false);
+    }
 
-	void OnTriggerEnter(Collider other) {			
-		
-        retryButton.SetActive(true);
+    // Update is called once per frame
+    void Update()
+    {
 
-        other.GetComponent<Rigidbody>().isKinematic = true;
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         unityChan.transform.LookAt(Camera.main.transform);
         unityChan.GetComponent<Animator>().SetTrigger("Goal");
-      
-        bgm.Stop();
-		goalJingle.Play();
-	}
 
-	public void RetryStage()
-	{
+        gameBgm.Stop();
+        goalBgm.Play();
+
+        retryButton.SetActive(true);
+
+    }
+
+    public void RetryStage()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
 }
