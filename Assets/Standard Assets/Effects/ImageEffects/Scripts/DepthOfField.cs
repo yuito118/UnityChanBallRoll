@@ -256,7 +256,7 @@ namespace UnityStandardAssets.ImageEffects
                     dx11bokehMaterial.SetVector ("_Screen", new Vector3(1.0f/(1.0f*source.width), 1.0f/(1.0f*source.height), internalBlurWidth));
                     dx11bokehMaterial.SetPass (2);
 
-#if UNITY_2018_1_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
                     Graphics.DrawProceduralIndirectNow (MeshTopology.Points, cbDrawArgs, 0);
 #else
                     Graphics.DrawProceduralIndirect (MeshTopology.Points, cbDrawArgs, 0);
@@ -335,7 +335,7 @@ namespace UnityStandardAssets.ImageEffects
                     dx11bokehMaterial.SetVector ("_Screen", new Vector3(1.0f/(1.0f*rtLow2.width), 1.0f/(1.0f*rtLow2.height), internalBlurWidth));
                     dx11bokehMaterial.SetPass (1);
                     
-#if UNITY_2018_1_OR_NEWER
+#if UNITY_2019_1_OR_NEWER
                     Graphics.DrawProceduralIndirectNow (MeshTopology.Points, cbDrawArgs, 0);
 #else
                     Graphics.DrawProceduralIndirect (MeshTopology.Points, cbDrawArgs, 0);
