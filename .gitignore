@@ -33,3 +33,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.unitypackage.meta
+.DS_Store
+Logs
